@@ -1,0 +1,67 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            margin-top: 20px;
+        }
+
+        input {
+            padding: 5px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 8px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Captcha Solver</h1>
+    <img src="sample.png" alt="Captcha Image" id="captcha-image">
+    <input type="text" id="captcha-input" placeholder="Enter Captcha Text">
+    <button onclick="solveCaptcha()">Solve Captcha</button>
+    <div id="result"></div>
+
+    <script>
+        function solveCaptcha() {
+            const captchaInput = document.getElementById('captcha-input').value;
+            const captchaImage = document.getElementById('captcha-image').alt;
+
+            if (captchaInput.toLowerCase() === captchaImage.toLowerCase()) {
+                document.getElementById('result').innerText = 'Captcha Solved!';
+            } else {
+                document.getElementById('result').innerText = 'Incorrect Captcha. Please try again.';
+            }
+        }
+    </script>
+</body>
+
+</html>
+```
